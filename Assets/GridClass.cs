@@ -23,7 +23,7 @@ public class GridClass
 
         gridArray = new int[width, height];
 
-        
+
         debugTextArray = new TextMesh[width, height];
 
         for ( int x = 0; x < gridArray.GetLength(0); x++)
@@ -38,10 +38,26 @@ public class GridClass
         Debug.DrawLine(GetWorldPosition(0, height), GetWorldPosition(width, height), Color.white, 100f);
         Debug.DrawLine(GetWorldPosition(width, 0), GetWorldPosition(width, height), Color.white, 100f);
 
+        // TODO - DELETE
         SetValue(0,0,43);
     }
 
-    private Vector3 GetWorldPosition(int x, int y)
+    public int GetWidth()
+    {
+        return width;
+    }
+
+    public int GetHeight()
+    {
+        return height;
+    }
+
+    public float GetCellSize()
+    {
+        return cellSize;
+    }
+
+    public Vector3 GetWorldPosition(int x, int y)
     {
         return new Vector3(x, y) * cellSize + originPosition;
     }
